@@ -29,3 +29,7 @@ Für das Training eigener generativer Modelle:
 * `liger_kernel`
 * `peft`
 * `datasets`
+
+Alternativ gern `requirements.txt` oder `pyproject.toml` verwenden.
+Wenn sich nicht alles installieren lässt, klären wir das direkt im
+Workshop. 
