@@ -33,3 +33,7 @@ Für das Training eigener generativer Modelle:
 Alternativ gern `requirements.txt` oder `pyproject.toml` verwenden.
 Wenn sich nicht alles installieren lässt, klären wir das direkt im
 Workshop. 
+
+Es läuft auch unter Windows, allerdings ist die Installation etwas
+*hakelig*. Eine Variante, wie es bei mir funktioniert hat, findet
+ihr unter [WINDOWS.md](WINDOWS.md).
