@@ -2,16 +2,26 @@
 #    uv pip compile pyproject.toml -o requirements.txt
 accelerate==1.10.1
     # via
+    #   autoawq
+    #   docling
+    #   docling-ibm-models
+    #   mineru-vl-utils
     #   peft
     #   trl
     #   unsloth
     #   unsloth-zoo
+aiofiles==25.1.0
+    # via mineru-vl-utils
 aiohappyeyeballs==2.6.1
     # via aiohttp
 aiohttp==3.12.15
     # via fsspec
 aiosignal==1.4.0
     # via aiohttp
+annotated-types==0.7.0
+    # via pydantic
+antlr4-python3-runtime==4.9.3
+    # via omegaconf
 anyio==4.10.0
     # via
     #   httpx
@@ -29,20 +39,33 @@ async-lru==2.0.5
 attrs==25.3.0
     # via
     #   aiohttp
+    #   jsonlines
     #   jsonschema
     #   referencing
+autoawq==0.2.9
+    # via finetuning-env (pyproject.toml)
 babel==2.17.0
     # via jupyterlab-server
 beautifulsoup4==4.13.5
-    # via nbconvert
+    # via
+    #   docling
+    #   nbconvert
 bitsandbytes==0.47.0
     # via
     #   finetuning-env (pyproject.toml)
     #   unsloth
 bleach==6.2.0
     # via nbconvert
+blis==1.3.0
+    # via thinc
+catalogue==2.0.10
+    # via
+    #   spacy
+    #   srsly
+    #   thinc
 certifi==2025.8.3
     # via
+    #   docling
     #   httpcore
     #   httpx
     #   requests
@@ -50,18 +73,36 @@ cffi==2.0.0
     # via argon2-cffi-bindings
 charset-normalizer==3.4.3
     # via requests
+click==8.3.0
+    # via typer
+cloudpathlib==0.23.0
+    # via weasel
+colorlog==6.10.1
+    # via rapidocr
 comm==0.2.3
     # via
     #   ipykernel
     #   ipywidgets
+confection==0.1.5
+    # via
+    #   thinc
+    #   weasel
 contourpy==1.3.3
     # via matplotlib
+cramjam==2.11.0
+    # via fastparquet
 cut-cross-entropy==25.1.1
     # via unsloth-zoo
 cycler==0.12.1
     # via matplotlib
+cymem==2.0.11
+    # via
+    #   preshed
+    #   spacy
+    #   thinc
 datasets==3.6.0
     # via
+    #   autoawq
     #   trl
     #   unsloth
     #   unsloth-zoo
@@ -77,14 +118,35 @@ dill==0.3.8
     # via
     #   datasets
     #   multiprocess
+docling==2.58.0
+    # via finetuning-env (pyproject.toml)
+docling-core==2.49.0
+    # via
+    #   docling
+    #   docling-ibm-models
+    #   docling-parse
+docling-ibm-models==3.10.2
+    # via docling
+docling-parse==4.7.0
+    # via docling
 docstring-parser==0.17.0
     # via tyro
 einops==0.8.1
-    # via flash-attn
+    # via
+    #   finetuning-env (pyproject.toml)
+    #   flash-attn
+et-xmlfile==2.0.0
+    # via openpyxl
 executing==2.2.1
     # via stack-data
+exllamav2==0.3.2
+    # via finetuning-env (pyproject.toml)
+faker==37.12.0
+    # via polyfactory
 fastjsonschema==2.21.2
     # via nbformat
+fastparquet==2024.11.0
+    # via exllamav2
 filelock==3.19.1
     # via
     #   datasets
@@ -92,6 +154,8 @@ filelock==3.19.1
     #   huggingface-hub
     #   torch
     #   transformers
+filetype==1.2.0
+    # via docling
 flash-attn==2.8.3
     # via finetuning-env (pyproject.toml)
 fonttools==4.60.0
@@ -105,6 +169,7 @@ frozenlist==1.7.0
 fsspec==2025.3.0
     # via
     #   datasets
+    #   fastparquet
     #   huggingface-hub
     #   torch
 h11==0.16.0
@@ -118,12 +183,17 @@ hf-xet==1.1.10
 httpcore==1.0.9
     # via httpx
 httpx==0.28.1
-    # via jupyterlab
+    # via
+    #   jupyterlab
+    #   mineru-vl-utils
 huggingface-hub==0.35.0
     # via
     #   accelerate
+    #   autoawq
     #   datasets
     #   diffusers
+    #   docling
+    #   docling-ibm-models
     #   peft
     #   sentence-transformers
     #   tokenizers
@@ -167,15 +237,21 @@ jinja2==3.1.6
     #   jupyterlab
     #   jupyterlab-server
     #   nbconvert
+    #   spacy
     #   torch
 joblib==1.5.2
     # via scikit-learn
 json5==0.12.1
     # via jupyterlab-server
+jsonlines==4.0.0
+    # via docling-ibm-models
 jsonpointer==3.0.0
     # via jsonschema
+jsonref==1.1.0
+    # via docling-core
 jsonschema==4.25.1
     # via
+    #   docling-core
     #   jupyter-events
     #   jupyterlab-server
     #   nbformat
@@ -228,12 +304,27 @@ jupyterlab-widgets==3.0.15
     # via ipywidgets
 kiwisolver==1.4.9
     # via matplotlib
+langcodes==3.5.0
+    # via spacy
+language-data==1.3.0
+    # via langcodes
 lark==1.3.0
     # via rfc3987-syntax
+latex2mathml==3.78.1
+    # via docling-core
 liger-kernel==0.6.2
     # via finetuning-env (pyproject.toml)
+lxml==5.4.0
+    # via
+    #   docling
+    #   python-docx
+    #   python-pptx
+marisa-trie==1.3.1
+    # via language-data
 markdown-it-py==4.0.0
     # via rich
+marko==2.2.1
+    # via docling
 markupsafe==3.0.2
     # via
     #   jinja2
@@ -246,8 +337,12 @@ matplotlib-inline==0.1.7
     #   ipython
 mdurl==0.1.2
     # via markdown-it-py
+mineru-vl-utils==0.1.14
+    # via finetuning-env (pyproject.toml)
 mistune==3.1.4
     # via nbconvert
+mpire==2.10.2
+    # via semchunk
 mpmath==1.3.0
     # via sympy
 msgspec==0.19.0
@@ -257,7 +352,14 @@ multidict==6.6.4
     #   aiohttp
     #   yarl
 multiprocess==0.70.16
-    # via datasets
+    # via
+    #   datasets
+    #   mpire
+murmurhash==1.0.13
+    # via
+    #   preshed
+    #   spacy
+    #   thinc
 nbclient==0.10.2
     # via nbconvert
 nbconvert==7.16.6
@@ -273,6 +375,8 @@ nest-asyncio==1.6.0
     # via ipykernel
 networkx==3.5
     # via torch
+ninja==1.13.0
+    # via exllamav2
 notebook==7.4.5
     # via jupyter
 notebook-shim==0.2.4
@@ -283,14 +387,24 @@ numpy==2.3.3
     # via
     #   accelerate
     #   bitsandbytes
+    #   blis
     #   contourpy
     #   datasets
     #   diffusers
+    #   docling-ibm-models
+    #   exllamav2
+    #   fastparquet
     #   matplotlib
+    #   opencv-python
     #   pandas
     #   peft
+    #   rapidocr
+    #   safetensors
     #   scikit-learn
     #   scipy
+    #   shapely
+    #   spacy
+    #   thinc
     #   torchvision
     #   transformers
     #   unsloth
@@ -333,10 +447,17 @@ nvidia-nvjitlink-cu12==12.8.93
     #   torch
 nvidia-nvtx-cu12==12.8.90
     # via torch
+omegaconf==2.3.0
+    # via rapidocr
+opencv-python==4.11.0.86
+    # via rapidocr
+openpyxl==3.1.5
+    # via docling
 packaging==25.0
     # via
     #   accelerate
     #   datasets
+    #   fastparquet
     #   huggingface-hub
     #   ipykernel
     #   jupyter-events
@@ -346,13 +467,20 @@ packaging==25.0
     #   matplotlib
     #   nbconvert
     #   peft
+    #   spacy
+    #   thinc
     #   transformers
     #   unsloth
     #   unsloth-zoo
+    #   weasel
 pandas==2.3.2
     # via
     #   finetuning-env (pyproject.toml)
     #   datasets
+    #   docling
+    #   docling-core
+    #   exllamav2
+    #   fastparquet
 pandocfilters==1.5.1
     # via nbconvert
 parso==0.8.5
@@ -367,12 +495,30 @@ pexpect==4.9.0
 pillow==11.3.0
     # via
     #   diffusers
+    #   docling
+    #   docling-core
+    #   docling-ibm-models
+    #   docling-parse
+    #   exllamav2
     #   matplotlib
+    #   mineru-vl-utils
+    #   python-pptx
+    #   rapidocr
     #   sentence-transformers
     #   torchvision
     #   unsloth-zoo
+pip==25.3
+    # via finetuning-env (pyproject.toml)
 platformdirs==4.4.0
     # via jupyter-core
+pluggy==1.6.0
+    # via docling
+polyfactory==2.22.3
+    # via docling
+preshed==3.0.10
+    # via
+    #   spacy
+    #   thinc
 prometheus-client==0.23.1
     # via jupyter-server
 prompt-toolkit==3.0.52
@@ -402,34 +548,67 @@ pure-eval==0.2.3
     # via stack-data
 pyarrow==21.0.0
     # via datasets
+pyclipper==1.3.0.post6
+    # via rapidocr
 pycparser==2.23
     # via cffi
+pydantic==2.12.3
+    # via
+    #   confection
+    #   docling
+    #   docling-core
+    #   docling-ibm-models
+    #   docling-parse
+    #   mineru-vl-utils
+    #   pydantic-settings
+    #   spacy
+    #   thinc
+    #   weasel
+pydantic-core==2.41.4
+    # via pydantic
+pydantic-settings==2.11.0
+    # via docling
 pygments==2.19.2
     # via
+    #   exllamav2
     #   ipython
     #   ipython-pygments-lexers
     #   jupyter-console
+    #   mpire
     #   nbconvert
     #   rich
+pylatexenc==2.10
+    # via docling
 pyparsing==3.2.5
     # via matplotlib
+pypdfium2==4.30.0
+    # via docling
 python-dateutil==2.9.0.post0
     # via
     #   arrow
     #   jupyter-client
     #   matplotlib
     #   pandas
+python-docx==1.2.0
+    # via docling
+python-dotenv==1.2.1
+    # via pydantic-settings
 python-json-logger==3.3.0
     # via jupyter-events
+python-pptx==1.0.2
+    # via docling
 pytz==2025.2
     # via pandas
 pyyaml==6.0.2
     # via
     #   accelerate
     #   datasets
+    #   docling-core
     #   huggingface-hub
     #   jupyter-events
+    #   omegaconf
     #   peft
+    #   rapidocr
     #   transformers
 pyzmq==27.1.0
     # via
@@ -437,6 +616,8 @@ pyzmq==27.1.0
     #   jupyter-client
     #   jupyter-console
     #   jupyter-server
+rapidocr==3.4.2
+    # via docling
 referencing==0.36.2
     # via
     #   jsonschema
@@ -445,15 +626,20 @@ referencing==0.36.2
 regex==2025.9.18
     # via
     #   diffusers
+    #   exllamav2
     #   transformers
     #   unsloth-zoo
 requests==2.32.5
     # via
     #   datasets
     #   diffusers
+    #   docling
     #   huggingface-hub
     #   jupyterlab-server
+    #   rapidocr
+    #   spacy
     #   transformers
+    #   weasel
 rfc3339-validator==0.1.4
     # via
     #   jsonschema
@@ -465,23 +651,35 @@ rfc3986-validator==0.1.1
 rfc3987-syntax==1.1.0
     # via jsonschema
 rich==14.1.0
-    # via tyro
+    # via
+    #   exllamav2
+    #   typer
+    #   tyro
 rpds-py==0.27.1
     # via
     #   jsonschema
     #   referencing
+rtree==1.4.1
+    # via
+    #   docling
+    #   docling-ibm-models
 safetensors==0.6.2
     # via
     #   accelerate
     #   diffusers
+    #   docling-ibm-models
+    #   exllamav2
     #   peft
     #   transformers
 scikit-learn==1.7.2
     # via sentence-transformers
 scipy==1.16.2
     # via
+    #   docling
     #   scikit-learn
     #   sentence-transformers
+semchunk==2.2.2
+    # via docling-core
 send2trash==1.8.3
     # via jupyter-server
 sentence-transformers==5.1.1
@@ -493,40 +691,74 @@ sentencepiece==0.2.1
 setuptools==80.9.0
     # via
     #   jupyterlab
+    #   spacy
+    #   thinc
     #   torch
     #   triton
+shapely==2.1.2
+    # via rapidocr
+shellingham==1.5.4
+    # via typer
 shtab==1.7.2
     # via tyro
 six==1.17.0
     # via
     #   python-dateutil
+    #   rapidocr
     #   rfc3339-validator
+smart-open==7.4.1
+    # via weasel
 sniffio==1.3.1
     # via anyio
 soupsieve==2.8
     # via beautifulsoup4
+spacy==3.8.7
+    # via finetuning-env (pyproject.toml)
+spacy-legacy==3.0.12
+    # via spacy
+spacy-loggers==1.0.5
+    # via spacy
+srsly==2.5.1
+    # via
+    #   confection
+    #   spacy
+    #   thinc
+    #   weasel
 stack-data==0.6.3
     # via ipython
 sympy==1.14.0
     # via torch
+tabulate==0.9.0
+    # via
+    #   docling-core
+    #   docling-parse
 terminado==0.18.1
     # via
     #   jupyter-server
     #   jupyter-server-terminals
+thinc==8.3.6
+    # via spacy
 threadpoolctl==3.6.0
     # via scikit-learn
 tinycss2==1.4.0
     # via bleach
 tokenizers==0.22.1
-    # via transformers
+    # via
+    #   autoawq
+    #   transformers
 torch==2.8.0
     # via
     #   accelerate
+    #   autoawq
     #   bitsandbytes
     #   cut-cross-entropy
+    #   docling-ibm-models
+    #   exllamav2
     #   flash-attn
     #   liger-kernel
+    #   mineru-vl-utils
     #   peft
+    #   safetensors
     #   sentence-transformers
     #   torchvision
     #   unsloth
@@ -535,7 +767,10 @@ torch==2.8.0
 torchao==0.13.0
     # via unsloth-zoo
 torchvision==0.23.0
-    # via unsloth
+    # via
+    #   docling-ibm-models
+    #   mineru-vl-utils
+    #   unsloth
 tornado==6.5.2
     # via
     #   ipykernel
@@ -548,9 +783,15 @@ tqdm==4.67.1
     # via
     #   finetuning-env (pyproject.toml)
     #   datasets
+    #   docling
+    #   docling-ibm-models
     #   huggingface-hub
+    #   mpire
     #   peft
+    #   rapidocr
+    #   semchunk
     #   sentence-transformers
+    #   spacy
     #   transformers
     #   unsloth
     #   unsloth-zoo
@@ -572,6 +813,10 @@ traitlets==5.14.3
 transformers==4.56.2
     # via
     #   finetuning-env (pyproject.toml)
+    #   autoawq
+    #   docling-core
+    #   docling-ibm-models
+    #   mineru-vl-utils
     #   peft
     #   sentence-transformers
     #   trl
@@ -579,6 +824,7 @@ transformers==4.56.2
     #   unsloth-zoo
 triton==3.4.0
     # via
+    #   autoawq
     #   cut-cross-entropy
     #   liger-kernel
     #   torch
@@ -591,23 +837,44 @@ trl==0.23.0
     #   unsloth-zoo
 typeguard==4.4.4
     # via tyro
+typer==0.19.2
+    # via
+    #   docling
+    #   docling-core
+    #   spacy
+    #   weasel
 types-python-dateutil==2.9.0.20250822
     # via arrow
 typing-extensions==4.15.0
     # via
+    #   autoawq
     #   beautifulsoup4
+    #   docling-core
     #   huggingface-hub
+    #   polyfactory
+    #   pydantic
+    #   pydantic-core
+    #   python-docx
+    #   python-pptx
     #   sentence-transformers
     #   torch
     #   typeguard
+    #   typer
+    #   typing-inspection
     #   tyro
     #   unsloth-zoo
+typing-inspection==0.4.2
+    # via
+    #   pydantic
+    #   pydantic-settings
 tyro==0.9.32
     # via
     #   unsloth
     #   unsloth-zoo
 tzdata==2025.2
-    # via pandas
+    # via
+    #   faker
+    #   pandas
 unsloth==2025.9.5
     # via finetuning-env (pyproject.toml)
 unsloth-zoo==2025.9.6
@@ -616,8 +883,15 @@ uri-template==1.3.0
     # via jsonschema
 urllib3==2.5.0
     # via requests
+wasabi==1.1.3
+    # via
+    #   spacy
+    #   thinc
+    #   weasel
 wcwidth==0.2.14
     # via prompt-toolkit
+weasel==0.4.1
+    # via spacy
 webcolors==24.11.1
     # via jsonschema
 webencodings==0.5.1
@@ -626,17 +900,25 @@ webencodings==0.5.1
     #   tinycss2
 websocket-client==1.8.0
     # via jupyter-server
+websockets==15.0.1
+    # via exllamav2
 wheel==0.45.1
     # via
     #   unsloth
     #   unsloth-zoo
 widgetsnbextension==4.0.14
     # via ipywidgets
+wrapt==2.0.0
+    # via smart-open
 xformers==0.0.32.post2
     # via unsloth
+xlsxwriter==3.2.9
+    # via python-pptx
 xxhash==3.5.0
     # via datasets
 yarl==1.20.1
     # via aiohttp
 zipp==3.23.0
     # via importlib-metadata
+zstandard==0.25.0
+    # via autoawq
