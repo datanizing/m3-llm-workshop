@@ -1,0 +1,19 @@
+[project]
+name = "sglang-env"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Christian Winkler", email = "christian.winkler@datanizing.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "sglang>=0.5.20",
+]
+
+[project.scripts]
+sglang-env = "sglang_env:main"
+
+[build-system]
+requires = ["uv_build>=0.12.15,<0.13.0"]
+build-backend = "uv_build"
