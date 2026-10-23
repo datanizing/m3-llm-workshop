@@ -52,7 +52,8 @@ Für die Einleitung verwenden wir:
 * nlptown/bert-base-multilingual-uncased-sentiment
 * MoritzLaurer/mDeBERTa-v3-base-mnli-xnli
 
-dbmdz/bert-base-german-uncased
+Feintuning von BERT verwendet:
+* dbmdz/bert-base-german-uncased
 
 Für Embeddings nutzen wir diese Modelle:
 * multi-qa-MiniLM-L6-cos-v1
